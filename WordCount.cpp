@@ -213,12 +213,12 @@ void WordCount::dumpWordsSortedByOccurence(std::ostream &out) const {
 }
 
 void WordCount::addAllWords(std::string text) {
-	for(int i = 0; i<text.length(); i++)
+	for(int i = 0; i<static_cast<int>(text.length()); i++)
 	{
 		if(isalpha(text[i]))
 		{
 			int start = i;
-			for(int j = i+1; j<text.length(); j++)
+			for(int j = i+1; j<static_cast<int>(text.length()); j++)
 			{
 				if(text.substr(j,1) == " " || (text.substr(j,1) == "\\" && text.substr(j+1,1) == "n"))
 				{
@@ -231,7 +231,7 @@ void WordCount::addAllWords(std::string text) {
 				}
 				else
 				{
-					if(j > text.length()-2)
+					if(j > static_cast<int>(text.length())-2)
 					{
 						if (isalpha(text[text.length()-1]))
 						{

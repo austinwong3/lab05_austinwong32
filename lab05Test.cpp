@@ -39,6 +39,17 @@ int main() {
     ASSERT_EQUALS(0,w2.getNumUniqueWords());
     ASSERT_EQUALS(0,w2.getTotalWords());
 
+    ostringstream t3;
+    w2.dumpWordsSortedByWord(t3);
+
+    string s3 = "";
+    ASSERT_EQUALS(s3,t3.str());
+
+    ostringstream t4;
+    w2.dumpWordsSortedByOccurence(t4);
+
+    string s4 = "";
+    ASSERT_EQUALS(s4,t4.str());
 
     return 0;
 
