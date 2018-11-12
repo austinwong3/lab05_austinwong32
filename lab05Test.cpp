@@ -51,6 +51,17 @@ int main() {
     string s4 = "";
     ASSERT_EQUALS(s4,t4.str());
 
+    WordCount w3;
+    w3.WordCount::addAllWords("      ");
+
+    ASSERT_EQUALS(0,w3.getNumUniqueWords());
+    ASSERT_EQUALS(0,w3.getTotalWords());
+
+    WordCount w4;
+    w4.WordCount::addAllWords("\n   \n\n\n\n\n    \n");
+
+    ASSERT_EQUALS(0,w4.getNumUniqueWords());
+    ASSERT_EQUALS(0,w4.getTotalWords());
     return 0;
 
 }
