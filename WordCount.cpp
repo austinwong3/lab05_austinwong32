@@ -220,14 +220,14 @@ void WordCount::addAllWords(std::string text) {
 			int start = i;
 			for(int j = i+1; j<static_cast<int>(text.length()); j++)
 			{
-				if(text.substr(j,1) == " " || (text.substr(j,1) == "\\" && text.substr(j+1,1) == "n"))
+				if(text.substr(j,1) == " " || (text.substr(j,1) == "\n" /*&& text.substr(j+1,1) == "n"*/))
 				{
 					int end = j;
 					string temp = text.substr(start, end-start);
 					
 					incrWordCount(temp);
-					j = text.length()-1;
-					i = end-1;
+					j = text.length();
+					i = end;
 				}
 				else
 				{
@@ -239,6 +239,7 @@ void WordCount::addAllWords(std::string text) {
 							string temp = text.substr(start, end-start);
 							incrWordCount(temp);
 							j = text.length()-1;
+
 							i = end-1;
 						}
 						else{

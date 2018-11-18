@@ -62,6 +62,14 @@ int main() {
 
     ASSERT_EQUALS(0,w4.getNumUniqueWords());
     ASSERT_EQUALS(0,w4.getTotalWords());
+
+    WordCount w5;
+    w5.WordCount::addAllWords("with\nI'd words");
+ 
+    ASSERT_EQUALS(3,w5.getNumUniqueWords());
+    ASSERT_EQUALS(3,w5.getTotalWords());
+    ASSERT_EQUALS(1,w5.getWordCount("i'd"));
+
     return 0;
 
 }
